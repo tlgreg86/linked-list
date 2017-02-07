@@ -1,7 +1,7 @@
 //enter button and forwarding site information to checkForText
 $('#enter').on('click', function() {
   var $name = $('#title').val();
-  var $url = $('address').val();
+  var $url = $('#address').val();
   checkForText ($name, $url);
   counter();
 })
