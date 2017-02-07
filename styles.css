@@ -1,17 +1,22 @@
 body {
   margin: 0px;
-  font-family: Open Sans;
+  font-family: 'Open Sans';
+}
+
+.text-bold {
+  font-weight: 800;
+  color: #FFFFFF;
 }
 
 .input-area {
-  float: left;
   width: 50%;
+  height: 700px;
   background-color: #455A64;
   text-align: center;
 }
 
-.logo {
-  display: inline;
+.logo{
+  display: inline-block;
 }
 
 input {
@@ -20,7 +25,10 @@ input {
 }
 
 section.bookmarks {
-  float: right;
-  width: 50%
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 50%;
+  height: 700px;
   background-color: #CFD8DC;
 }
