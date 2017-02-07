@@ -3,22 +3,14 @@ body {
   font-family: Open Sans;
 }
 
-.text-bold {
-  font-weight: 800;
-}
-
-.text-regular {
-  font-weight: 400;
-}
-
-section.input-area {
+.input-area {
   float: left;
   width: 50%;
   background-color: #455A64;
   text-align: center;
 }
 
-section.logo {
+.logo {
   display: inline;
 }
 
