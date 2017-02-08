@@ -111,6 +111,10 @@ a {
   font-weight: 600;
 }
 
+.activated {
+  border-bottom: 1px solid #CFD8DC;
+}
+
 .read-button {
   color: #F05A28;
   font-weight: 600;
@@ -122,6 +126,10 @@ div.bookmark {
   height: 146px;
   border: 2px solid #607DB8;
   background-color: #FFFFFF;
+}
+
+div.read-count{
+  background-color: #F2F4F4;
 }
 
 .break {

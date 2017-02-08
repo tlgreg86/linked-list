@@ -1,3 +1,10 @@
+$('input').keyup( function(){
+  $('#enter').prop('disabled', true);
+  if ($('#title').val() != '' || $('#address') != ''){
+    $('#event').prop('disabled', false);
+  }
+});
+
 //enter button and forwarding site information to checkForText
 $('#enter').on('click', function(event) {
   event.preventDefault();
@@ -49,10 +56,7 @@ $('.bookmarks-list').on('click','.delete', function() {
 
 $('.bookmarks-list').on('click','.read', function() {
   $(this).parent('.bookmark').toggleClass('read-count');
-  // var display = $('.read-count').length;
-  // console.log(display);
-  // $('.original-underline').css("border-bottom: 1px red");
-
+  $('a').toggleClass('activated');
   $(this).toggleClass('read-button');
   counter();
 });
@@ -65,7 +69,25 @@ function counter () {
   $('#total').text(totalCount);
   $('#total-read').text(readCount);
   $('#unread').text(unreadCount);
+  leftHeight(totalCount);
   console.log(totalCount);
   console.log(readCount);
   console.log(unreadCount);
 };
+
+$(window).on('resize', function(){
+  counter()
+});
+
+function leftHeight(totalCount) {
+  if ($(window).width() < 750) {
+    $('.input-area').css('height', '50%');
+  }
+  else if (totalCount >= 5){
+    adjustedCount = totalCount - 4;
+    adjustedPixels = 700 + (adjustedCount * 166);
+    $('.input-area').css('height', adjustedPixels+'px');
+  } else {
+    $('.input-area').css('height', '700px');
+  }
+}
