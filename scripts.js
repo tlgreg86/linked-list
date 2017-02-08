@@ -1,7 +1,14 @@
-$('input').keyup( function(){
-  $('#enter').prop('disabled', true);
-  if ($('#title').val() != '' || $('#address') != ''){
-    $('#event').prop('disabled', false);
+//disable enter button on startup
+$('#enter').prop('disabled', true);
+
+//enable enter button upon text entry
+$('input[type=text]').on('keyup', function(){
+  var $name = $('#title').val();
+  var $url = $('#address').val();
+  if ($name !== '' || $url !== ''){
+    $('#enter').prop('disabled', false);
+  } else {
+    $('#enter').prop('disabled', true);
   }
 });
 
@@ -11,9 +18,8 @@ $('#enter').on('click', function(event) {
   var $name = $('#title').val();
   var $url = $('#address').val();
   checkForText ($name, $url);
-  $('#title').val('');
-  $('#address').val('');
   counter();
+  $('#enter').prop('disabled', true);
 })
 
 //checks for valid text in input, then push information to checkForAddress
@@ -32,13 +38,15 @@ function checkForAddress($name, $url) {
     alert('Please enter a valid URL');
   } else {
     makeBookmark($name, $url);
+    $('#title').val('');
+    $('#address').val('');
   }
 }
 
 //creates HTML and enters information into object
 function makeBookmark($name, $url) {
   //create bookmark card
-  $(".bookmarks-list").prepend(
+  $('.bookmarks-list').prepend(
     '<div class="bookmark">' +
       '<h2>' + $name + '</h2>' +
       '<div class="break">' + '</div>' +
@@ -49,11 +57,13 @@ function makeBookmark($name, $url) {
     '</div>');
   };
 
+//delete button
 $('.bookmarks-list').on('click','.delete', function() {
   $(this).parent('.bookmark').remove();
   counter();
 });
 
+//read button and toggle of read status
 $('.bookmarks-list').on('click','.read', function() {
   $(this).parent('.bookmark').toggleClass('read-count');
   $('a').toggleClass('activated');
@@ -70,20 +80,18 @@ function counter () {
   $('#total-read').text(readCount);
   $('#unread').text(unreadCount);
   leftHeight(totalCount);
-  console.log(totalCount);
-  console.log(readCount);
-  console.log(unreadCount);
 };
 
+//detect window resize
 $(window).on('resize', function(){
   counter()
 });
 
+//colors window correctly upon resize
 function leftHeight(totalCount) {
   if ($(window).width() < 750) {
     $('.input-area').css('height', '50%');
-  }
-  else if (totalCount >= 5){
+  } else if (totalCount >= 5){
     adjustedCount = totalCount - 4;
     adjustedPixels = 700 + (adjustedCount * 166);
     $('.input-area').css('height', adjustedPixels+'px');

@@ -50,7 +50,7 @@ input {
 
 .enter {
   border-style: none;
-  background-color: #FFC107;
+  background-color: #FFD773;
   width: 85%;
   height: 50px;
   color: white;
@@ -59,7 +59,7 @@ input {
 }
 
 .enter:hover {
-  background: #FFD773
+  background: #FFC107;
 }
 
 section.bookmarks-list {
