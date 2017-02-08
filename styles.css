@@ -1,7 +1,7 @@
 body {
+  background-color: #CFD8DC;
   margin: 0px;
   font-family: 'Open Sans';
-  background-color: #CFD8DC;
 }
 
 .text-bold {
@@ -20,37 +20,50 @@ body {
   text-align: center;
 }
 
+p {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 10px 0px 10px;
+  border-width: 0px;
+}
+
+fieldset {
+  border: none;
+}
+
 h1{
   margin: 0px;
-  padding-top: 150px;
+  padding-top: 110px;
   font-size: 62px;
 }
 
 input {
   display: block;
   text-align: center;
-  margin: 30px auto;
+  margin: 50px auto;
   width: 85%;
-  padding-top: 20px;
-}
-
-.title {
-  margin-top: 20px;
-}
-
-.address {
-  margin-top: 40px;
+  height: 25px;
+  padding: 10px 0px;
+  font-size: 30px;
+  font-weight: 300;
 }
 
 .enter {
-  margin-top: 40px;
   border-style: none;
   background-color: #FFC107;
   width: 85%;
-  height: 20px;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.enter:hover {
+  background: #FFD773
 }
 
 section.bookmarks-list {
+  background-color: #CFD8DC;
   width: 50%;
   height: 700px;
   position: absolute;
@@ -60,7 +73,7 @@ section.bookmarks-list {
 
 h2 {
   color: #455A64;
-  margin: 15px 0px 15px 3%;
+  margin: 6px 0px -9px 3%;
   font-weight: 600;
 }
 
@@ -89,7 +102,7 @@ a {
 div.bookmark {
   margin: 20px auto 0px;
   width: 90%;
-  height: 175px;
+  height: 146px;
   border: 2px solid #607DB8;
   background-color: #F2F4F4;
 }
@@ -99,4 +112,43 @@ div.bookmark {
   width: 94%;
   height: 2px;
   background-color: #CFD8DC;
+}
+
+@media screen and (max-width: 650px) {
+
+  body {
+    display: block;
+  }
+
+  .input-area {
+    top: 0px;
+    width: 100%;
+    height: 50%;
+    background-color: #455A64;
+    text-align: center;
+  }
+  section.bookmarks-list {
+    position: static;
+    /*margin-top: -20px;*/
+    background-color: #CFD8DC;
+    width: 100%;
+    height: 50%;
+  }
+
+  .text-bold {
+    font-weight: 800;
+    font-size: 45px;
+    color: #FFFFFF;
+  }
+
+  img {
+    width: 48px;
+  }
+
+
+
+
+
+
+
 }
