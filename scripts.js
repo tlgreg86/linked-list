@@ -54,11 +54,8 @@ function counter () {
   var readCount = $('.readCount').length;
   var totalCount = $('.bookmark').length;
   var unreadCount = totalCount - readCount;
-  $('#total').val() = totalCount;
-  $('#totalRead').val() = readCount;
-  $('#unread').val() = unreadCount;
-  console.log(totalCount);
-  console.log(readCount);
-  console.log(unreadCount);
+  $('#total').text(totalCount);
+  $('#totalRead').text(readCount);
+  $('#unread').text(unreadCount);
   //need to update counters on site
 }
