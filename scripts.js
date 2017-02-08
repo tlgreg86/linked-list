@@ -20,12 +20,12 @@ function checkForText($name, $url) {
 
 //check for valid website (http, https, ftp), then push to creation of bookmark
 function checkForAddress($name, $url) {
-  var check = /(http:\/\/|https:\/\/|ftp:\/\/)/
-  if(check.test($url) === true) {
+  // var check = /(http:\/\/|https:\/\/|ftp:\/\/)/
+  // if(check.test($url) === false) {
+  //   alert('Please enter a valid URL');
+  // } else {}
     makeBookmark($name, $url);
-  } else {
-    alert('Please enter a valid URL');
-  }
+
 }
 
 //creates HTML and enters information into object
@@ -48,9 +48,9 @@ $('.bookmarks-list').on('click','.delete', function() {
 });
 
 $('.bookmarks-list').on('click','.read', function() {
-  $(this).parent('.bookmark').toggleClass('read-count');
-  $('.original-underline').toggleClass('.original-underline');
-  $(this).toggleClass('read-button');
+  $(this).parent('.bookmark').toggleClass('.read-count');
+  // $('.original-underline').css("border-bottom: 1px red");
+  $(this).toggleClass('.read-button');
   counter();
 });
 
