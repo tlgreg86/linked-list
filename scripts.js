@@ -48,7 +48,9 @@ $('.bookmarks-list').on('click','.delete', function() {
 });
 
 $('.bookmarks-list').on('click','.read', function() {
-  $(this).parent('.bookmark').toggleClass('.read-count');
+  $(this).parent().toggleClass('.read-count');
+  var display = $('read-count').length;
+  console.log(display);
   // $('.original-underline').css("border-bottom: 1px red");
   $(this).toggleClass('.read-button');
   counter();
@@ -60,6 +62,9 @@ function counter () {
   var totalCount = $('.bookmark').length;
   var unreadCount = totalCount - readCount;
   $('#total').text(totalCount);
-  $('#totalRead').text(readCount);
+  $('#total-read').text(readCount);
   $('#unread').text(unreadCount);
+  console.log(totalCount);
+  console.log(readCount);
+  console.log(unreadCount);
 };
