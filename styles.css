@@ -20,14 +20,34 @@ body {
   text-align: center;
 }
 
-.logo{
-  display: inline-block;
+h1{
+  margin: 0px;
+  padding-top: 150px;
+  font-size: 62px;
 }
 
 input {
   display: block;
   text-align: center;
-  margin: 0px auto;
+  margin: 30px auto;
+  width: 85%;
+  padding-top: 20px;
+}
+
+.title {
+  margin-top: 20px;
+}
+
+.address {
+  margin-top: 40px;
+}
+
+.enter {
+  margin-top: 40px;
+  border-style: none;
+  background-color: #FFC107;
+  width: 85%;
+  height: 20px;
 }
 
 section.bookmarks-list {
