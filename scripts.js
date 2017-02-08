@@ -48,9 +48,12 @@ $('.bookmarks-list').on('click','.delete', function() {
 });
 
 $('.bookmarks-list').on('click','.read', function() {
-  $(this).parent('.bookmark').toggleClass('.read-count');
+  $(this).parent('.bookmark').toggleClass('read-count');
+  // var display = $('.read-count').length;
+  // console.log(display);
   // $('.original-underline').css("border-bottom: 1px red");
-  $(this).toggleClass('.read-button');
+
+  $(this).toggleClass('read-button');
   counter();
 });
 
