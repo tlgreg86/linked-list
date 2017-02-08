@@ -78,15 +78,21 @@ h2 {
 }
 
 a {
+  text-decoration: none;
   color: #607D8B;
-  padding: 15px 0px 15px 3%;
+  margin: 15px 0px 15px 3%;
 }
 
 .read, .delete {
+  text-decoration: none;
   background-color: transparent;
   color: #455A64;
   border: 0px;
   border-bottom: 1px solid #CFD8DC;
+}
+
+.read, .delete:hover {
+
 }
 
 .read {
@@ -99,12 +105,32 @@ a {
   margin: 0px 3% 0px 0px;
 }
 
+.original-underline {
+  text-decoration: none;
+  border-bottom: 1px solid #F2F2F4;
+}
+
+.original-underline:hover{
+  border-bottom: 1px solid #FFC107;
+  font-weight: 600;
+}
+
+.activated{
+  border-bottom: 1px solid #red;
+  font-weight: 600;
+}
+
+.read-button {
+  color: #F05A28;
+  font-weight: 600;
+}
+
 div.bookmark {
   margin: 20px auto 0px;
   width: 90%;
   height: 146px;
   border: 2px solid #607DB8;
-  background-color: #F2F4F4;
+  background-color: #FFFFFF;
 }
 
 .break {

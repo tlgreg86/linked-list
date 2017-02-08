@@ -20,9 +20,12 @@ function checkForText($name, $url) {
 
 //check for valid website (http, https, ftp), then push to creation of bookmark
 function checkForAddress($name, $url) {
-  // if {}//check for http, https, ftp
-  // else {}
-  makeBookmark($name, $url);
+  var check = /(http:\/\/|https:\/\/|ftp:\/\/)/
+  if(check.test($url) === true) {
+    makeBookmark($name, $url);
+  } else {
+    alert('Please enter a valid URL');
+  }
 }
 
 //creates HTML and enters information into object
@@ -32,10 +35,10 @@ function makeBookmark($name, $url) {
     '<div class="bookmark">' +
       '<h2>' + $name + '</h2>' +
       '<div class="break">' + '</div>' +
-      '<a href="'+ $url +'" class="text-regular">' + $url + '</a>' +
+      '<a href="'+ $url +'" class="original-underline text-regular">' + $url + '</a>' +
       '<div class="break">' + '</div>' +
-      '<button class="read">' + 'Read' + '</button>' +
-      '<button class="delete">' + 'Delete' + '</button;>' +
+      '<button class="original-underline read">' + 'Read' + '</button>' +
+      '<button class="original-underline delete">' + 'Delete' + '</button;>' +
     '</div>');
   };
 
@@ -45,17 +48,15 @@ $('.bookmarks-list').on('click','.delete', function() {
 });
 
 $('.bookmarks-list').on('click','.read', function() {
-  $(this).parent('.bookmark').toggleClass('readCount');
+  $(this).parent('.bookmark').toggleClass('read-count');
+  $('.original-underline').toggleClass('.original-underline');
+  $(this).toggleClass('read-button');
   counter();
 });
 
 //counter for number of entries, read,
 function counter () {
-  var readCount = $('.readCount').length;
+  var readCount = $('.read-count').length;
   var totalCount = $('.bookmark').length;
   var unreadCount = totalCount - readCount;
-  $('#total').text(totalCount);
-  $('#totalRead').text(readCount);
-  $('#unread').text(unreadCount);
-  //need to update counters on site
 }
