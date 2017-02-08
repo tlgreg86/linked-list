@@ -48,9 +48,7 @@ $('.bookmarks-list').on('click','.delete', function() {
 });
 
 $('.bookmarks-list').on('click','.read', function() {
-  $(this).parent().toggleClass('.read-count');
-  var display = $('read-count').length;
-  console.log(display);
+  $(this).parent('.bookmark').toggleClass('.read-count');
   // $('.original-underline').css("border-bottom: 1px red");
   $(this).toggleClass('.read-button');
   counter();
@@ -58,8 +56,8 @@ $('.bookmarks-list').on('click','.read', function() {
 
 //counter for number of entries, read,
 function counter () {
-  var readCount = $('.read-count').length;
   var totalCount = $('.bookmark').length;
+  var readCount = $('.read-count').length;
   var unreadCount = totalCount - readCount;
   $('#total').text(totalCount);
   $('#total-read').text(readCount);
