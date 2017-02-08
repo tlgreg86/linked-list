@@ -1,11 +1,16 @@
 body {
   margin: 0px;
   font-family: 'Open Sans';
+  background-color: #CFD8DC;
 }
 
 .text-bold {
   font-weight: 800;
   color: #FFFFFF;
+}
+
+.text-regular {
+  font-weight: 400;
 }
 
 .input-area {
@@ -15,20 +20,83 @@ body {
   text-align: center;
 }
 
-.logo{
-  display: inline-block;
+h1{
+  margin: 0px;
+  padding-top: 150px;
+  font-size: 62px;
 }
 
 input {
   display: block;
   text-align: center;
+  margin: 30px auto;
+  width: 85%;
+  padding-top: 20px;
 }
 
-section.bookmarks {
+.title {
+  margin-top: 20px;
+}
+
+.address {
+  margin-top: 40px;
+}
+
+.enter {
+  margin-top: 40px;
+  border-style: none;
+  background-color: #FFC107;
+  width: 85%;
+  height: 20px;
+}
+
+section.bookmarks-list {
+  width: 50%;
+  height: 700px;
   position: absolute;
   right: 0px;
   top: 0px;
-  width: 50%;
-  height: 700px;
+}
+
+h2 {
+  color: #455A64;
+  margin: 15px 0px 15px 3%;
+  font-weight: 600;
+}
+
+a {
+  color: #607D8B;
+  padding: 15px 0px 15px 3%;
+}
+
+.read, .delete {
+  background-color: transparent;
+  color: #455A64;
+  border: 0px;
+  border-bottom: 1px solid #CFD8DC;
+}
+
+.read {
+  float: left;
+  margin: 0px 0px 0px 3%;
+}
+
+.delete {
+  float: right;
+  margin: 0px 3% 0px 0px;
+}
+
+div.bookmark {
+  margin: 20px auto 0px;
+  width: 90%;
+  height: 175px;
+  border: 2px solid #607DB8;
+  background-color: #F2F4F4;
+}
+
+.break {
+  margin: 15px auto;
+  width: 94%;
+  height: 2px;
   background-color: #CFD8DC;
 }
