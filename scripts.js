@@ -35,7 +35,7 @@ function checkForText($name, $url) {
 function checkForAddress($name, $url) {
   var check = /(http:\/\/|https:\/\/|ftp:\/\/)/
   if(check.test($url) === false) {
-    alert('Please enter a valid URL');
+    alert('Please enter a valid URL that includes http://, https://, or ftp:// as a prefix.');
   } else {
     makeBookmark($name, $url);
     $('#title').val('');
@@ -45,7 +45,7 @@ function checkForAddress($name, $url) {
 
 //creates HTML and enters information into object
 function makeBookmark($name, $url) {
-  //create bookmark card
+  //create bookmark
   $('.bookmarks-list').prepend(
     '<div class="bookmark">' +
       '<h2>' + $name + '</h2>' +
@@ -71,15 +71,14 @@ $('.bookmarks-list').on('click','.read', function() {
   counter();
 });
 
-//delete button
-$('#delete-read').on('click', function() {
-  if ($('.bookmark') == true && $('.read-count') == true) {
-    $(this).remove();
-    counter();
-  }
+//delete button for read links
+$('#delete-read').on('click', function(event) {
+  event.preventDefault();
+  $('.read-count').remove();
+  counter();
 });
 
-//counter for number of entries, read,
+//counter for number of entries, read, and unread
 function counter () {
   var totalCount = $('.bookmark').length;
   var readCount = $('.read-count').length;
