@@ -67,7 +67,7 @@ $('.bookmarks-list').on('click','.delete', function() {
 $('.bookmarks-list').on('click','.read', function() {
   $(this).parent('.bookmark').toggleClass('read-count');
   $('a').toggleClass('activated');
-  $(this).toggleClass('read-button');
+  $(this).toggleClass('read-button-toggled');
   counter();
 });
 
