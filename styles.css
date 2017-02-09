@@ -33,14 +33,14 @@ fieldset {
 
 h1{
   margin: 0px;
-  padding-top: 110px;
+  padding-top: 81px;
   font-size: 50px;
 }
 
 input {
   display: block;
   text-align: center;
-  margin: 50px auto;
+  margin: 33px auto;
   width: 85%;
   height: 25px;
   padding: 10px 0px;
@@ -50,7 +50,7 @@ input {
 
 .enter {
   border-style: none;
-  background-color: #FFD773;
+  background-color: #FFC107;
   width: 85%;
   height: 50px;
   color: white;
@@ -59,7 +59,7 @@ input {
 }
 
 .enter:hover {
-  background: #FFC107;
+  background: #FFD773;
 }
 
 section.bookmarks-list {
@@ -75,12 +75,19 @@ h2 {
   color: #455A64;
   margin: 6px 0px -9px 3%;
   font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;;
+  overflow: hidden;
 }
 
 a {
   text-decoration: none;
   color: #607D8B;
   margin: 15px 0px 15px 3%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
 .read, .delete {
@@ -139,7 +146,7 @@ div.read-count{
   background-color: #CFD8DC;
 }
 
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 749px) {
 
   body {
     display: block;
