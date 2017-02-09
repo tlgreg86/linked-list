@@ -71,6 +71,14 @@ $('.bookmarks-list').on('click','.read', function() {
   counter();
 });
 
+//delete button
+$('#delete-read').on('click', function() {
+  if ($('.bookmark') == true && $('.read-count') == true) {
+    $(this).remove();
+    counter();
+  }
+});
+
 //counter for number of entries, read,
 function counter () {
   var totalCount = $('.bookmark').length;
