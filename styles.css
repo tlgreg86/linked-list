@@ -75,19 +75,12 @@ h2 {
   color: #455A64;
   margin: 6px 0px -9px 3%;
   font-weight: 600;
-  white-space: nowrap;
-  text-overflow: ellipsis;;
-  overflow: hidden;
 }
 
 a {
   text-decoration: none;
   color: #607D8B;
   margin: 15px 0px 15px 3%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
 }
 
 .read, .delete {
@@ -133,6 +126,9 @@ div.bookmark {
   height: 146px;
   border: 2px solid #607DB8;
   background-color: #FFFFFF;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 div.read-count{
@@ -183,11 +179,5 @@ div.read-count{
   img {
     width: 40px;
   }
-
-
-
-
-
-
 
 }
