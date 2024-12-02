@@ -46,16 +46,20 @@ function checkForAddress($name, $url) {
 //creates HTML and enters information into object
 function makeBookmark($name, $url) {
   //create bookmark
-  $('.bookmarks-list').prepend(
-    '<div class="bookmark">' +
-      '<h2>' + $name + '</h2>' +
-      '<div class="break">' + '</div>' +
-      '<a href="'+ $url +'" class="original-underline text-regular">' + $url + '</a>' +
-      '<div class="break">' + '</div>' +
-      '<button class="original-underline read">' + 'Read' + '</button>' +
-      '<button class="original-underline delete">' + 'Delete' + '</button;>' +
-    '</div>');
-  };
+  const bookmarkTemplate = `
+    <div class="bookmark">
+      <h2>${$name}</h2>
+      <div class="break"></div>
+      <a href="${$url}" 
+         class="original-underline text-regular">${$url}</a>
+      <div class="break"></div>
+      <button class="original-underline read">Read</button>
+      <button class="original-underline delete">Delete</button>
+    </div>
+  `;
+
+  $('.bookmarks-list').prepend(bookmarkTemplate);
+};
 
 //delete button
 $('.bookmarks-list').on('click','.delete', function() {
