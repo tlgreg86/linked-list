@@ -69,8 +69,9 @@ $('.bookmarks-list').on('click','.delete', function() {
 
 //read button and toggle of read status
 $('.bookmarks-list').on('click','.read', function() {
-  $(this).parent('.bookmark').toggleClass('read-count');
-  $('a').toggleClass('activated');
+  const $bookmark = $(this).parent('.bookmark');
+  $bookmark.toggleClass('read-count');
+  $bookmark.find('a').toggleClass('activated');
   $(this).toggleClass('read-button-toggled');
   counter();
 });

@@ -14,45 +14,67 @@ body {
 }
 
 .input-area {
-  width: 50%;
-  height: 700px;
+  width: 100%;
   background-color: #455A64;
   text-align: center;
+  padding: 20px 0;
 }
 
-h1{
+h1 {
   margin: 0px;
-  padding-top: 81px;
+  padding-top: 20px;
   font-size: 50px;
+}
+
+.form-group {
+  margin: 20px auto;
+  width: 85%;
+  max-width: 600px;
 }
 
 input {
   display: block;
   text-align: center;
-  margin: 33px auto;
-  width: 85%;
+  margin: 10px auto;
+  width: 100%;
   height: 25px;
   padding: 10px 0px;
   font-size: 30px;
   font-weight: 300;
 }
 
+.error-message {
+  color: #FFC107;
+  height: 20px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 .button-style {
   border-style: none;
   background-color: #FFC107;
   width: 85%;
+  max-width: 600px;
   height: 50px;
   color: white;
   font-size: 20px;
   font-weight: 600;
+  margin: 10px auto;
+  cursor: pointer;
 }
 
 .button-style:hover {
   background: #FFD773;
 }
 
+.button-style:disabled {
+  background-color: #CFD8DC;
+  cursor: not-allowed;
+}
+
 fieldset {
   border: none;
+  margin: 10px 0;
 }
 
 p {
@@ -60,86 +82,79 @@ p {
   margin-top: 10px;
   padding: 10px 10px 0px 10px;
   border-width: 0px;
+  color: white;
 }
 
 section.bookmarks-list {
   background-color: #CFD8DC;
-  width: 50%;
-  height: 700px;
-  position: absolute;
-  right: 0px;
-  top: 0px;
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
 div.bookmark {
-  margin: 20px auto 0px;
+  margin: 20px auto;
   width: 90%;
-  height: 146px;
+  max-width: 600px;
+  padding: 20px;
   border: 2px solid #607DB8;
   background-color: #FFFFFF;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
-div.read-count{
+div.read-count {
   background-color: #F2F4F4;
 }
 
 h2 {
   color: #455A64;
-  margin: 6px 0px -9px 3%;
+  margin: 0;
   font-weight: 600;
+  word-break: break-word;
 }
 
 .break {
-  margin: 15px auto;
-  width: 94%;
+  margin: 15px 0;
+  width: 100%;
   height: 2px;
   background-color: #CFD8DC;
 }
 
 a {
+  color: #607DB8;
   text-decoration: none;
-  color: #607D8B;
-  margin: 15px 0px 15px 3%;
+  word-break: break-all;
+  display: block;
+  margin: 15px 0;
 }
 
-.read, .delete {
-  text-decoration: none;
-  background-color: transparent;
+a:hover {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.bookmark button {
+  display: inline-block;
+}
+
+button.original-underline {
   color: #455A64;
-  border: 0px;
-  border-bottom: 1px solid #CFD8DC;
+  text-decoration: underline;
+  border: none;
+  background: none;
+  padding: 5px 0;
+  margin: 0 15px 0 0;
+  cursor: pointer;
 }
 
-.read {
-  float: left;
-  margin: 0px 0px 0px 3%;
-}
-
-.delete {
-  float: right;
-  margin: 0px 3% 0px 0px;
-}
-
-.original-underline {
-  text-decoration: none;
-  border-bottom: 1px solid #F2F2F4;
-}
-
-.original-underline:hover{
-  border-bottom: 1px solid #FFC107;
-  font-weight: 600;
-}
-
-.activated {
-  border-bottom: 1px solid #CFD8DC;
-}
-
-.read-button-toggled {
+button.read-button-toggled {
   color: #F05A28;
-  font-weight: 600;
+  font-weight: 800;
+}
+
+a.activated {
+  color: #F05A28;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 749px) {
