@@ -32,30 +32,32 @@ $(document).ready(function() {
 $('#enter').prop('disabled', true);
 
 //enable enter button upon text entry
-$('input[type=text]').on('keyup', function(){
-  var $name = $('#title').val();
-  var $url = $('#address').val();
-  if ($name !== '' || $url !== ''){
-    $('#enter').prop('disabled', false);
-  } else {
-    $('#enter').prop('disabled', true);
-  }
-});
+function validateInputs() {
+  const $name = $('#title').val().trim();
+  const $url = $('#address').val().trim();
+  const isValid = $name !== '' && $url !== '';
+  $('#enter').prop('disabled', !isValid);
+  return isValid;
+}
+
+$('input').on('input', validateInputs);
 
 //enter button and forwarding site information to checkForText
 $('#enter').on('click', function(event) {
   event.preventDefault();
-  var $name = $('#title').val();
-  var $url = $('#address').val();
-  checkForText($name, $url);
-  counter();
-  $('#enter').prop('disabled', true);
-})
+  const $name = $('#title').val().trim();
+  const $url = $('#address').val().trim();
+  
+  if (validateInputs()) {
+    checkForText($name, $url);
+  }
+});
 
 //checks for valid text in input, then push information to checkForAddress
 function checkForText($name, $url) {
   if ($name === "" || $url === "") {
-    alert("Please enter valid title and url.")
+    alert("Please enter valid title and url.");
+    validateInputs();
   } else {
     checkForAddress($name, $url);
   }
@@ -63,13 +65,15 @@ function checkForText($name, $url) {
 
 //check for valid website (http, https, ftp), then push to creation of bookmark
 function checkForAddress($name, $url) {
-  var check = /(http:\/\/|https:\/\/|ftp:\/\/)/
+  const check = /(http:\/\/|https:\/\/|ftp:\/\/)/;
   if(check.test($url) === false) {
     alert('Please enter a valid URL that includes http://, https://, or ftp:// as a prefix.');
+    validateInputs();
   } else {
     makeBookmark($name, $url, false);
     $('#title').val('');
     $('#address').val('');
+    validateInputs();
   }
 }
 
