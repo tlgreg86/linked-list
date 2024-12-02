@@ -1,36 +1,38 @@
  <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linked List</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
   </head>
   <body>
-    <form class="input-area">
-      <h1 class="text-bold">Linked<img src="linked-list-logo.svg" alt="Link Image" width= "70px">List</h1>
-      <input type="text" name="" value="" class="title" id="title" placeholder="Website Title">
-      <input type="text" name="" value="" class="address" id="address" placeholder="Website URL">
-      <input type="submit" name="button" class="button-style" id="enter" value="Enter">
+    <form class="input-area" aria-label="Bookmark entry form">
+      <h1 class="text-bold">Linked<img src="linked-list-logo.svg" alt="Linked List Logo" width="70">List</h1>
+      <div class="form-group">
+        <input type="text" class="title" id="title" placeholder="Website Title" aria-label="Website Title">
+        <div class="error-message" id="title-error"></div>
+      </div>
+      <div class="form-group">
+        <input type="url" class="address" id="address" placeholder="Website URL" aria-label="Website URL">
+        <div class="error-message" id="url-error"></div>
+      </div>
+      <button type="submit" class="button-style" id="enter" disabled aria-label="Add bookmark">Enter</button>
       <fieldset class="counters">
         <p class="total">Total: <span id="total">0</span></p>
-        <p class="total-read">Read:  <span id="total-read">0</span></p>
-        <p class="unread">Unread: <span  id="unread">0</span></p>
+        <p class="total-read">Read: <span id="total-read">0</span></p>
+        <p class="unread">Unread: <span id="unread">0</span></p>
       </fieldset>
-      <input type="submit" name="button" class="button-style" id="delete-read" value="Remove Read Links">
+      <button type="button" class="button-style" id="delete-read" aria-label="Remove read bookmarks">Remove Read Links</button>
     </form>
-    <section class="bookmarks-list">
-      <!-- <div class="bookmark">
-        <h2>Website</h2>
-        <div class="break"></div>
-        <a href="" class="text-regular">http://www.URL.org</a>
-        <div class="break"></div>
-        <button class="original-underline read">Read</button>
-        <button class="original-underline delete">Delete</button;>
-      </div> -->
+    <section class="bookmarks-list" aria-label="Bookmarks list">
+      <!-- Bookmarks will be dynamically inserted here -->
     </section>
+    
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="jquery-3.1.1.min.js"><\/script>')</script>
+    <script src="scripts.js"></script>
   </body>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="scripts.js"></script>
 </html>
