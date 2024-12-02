@@ -2,6 +2,8 @@
 
 A simple and elegant bookmark manager that allows you to save and organize your favorite websites. Built with HTML, CSS, and JavaScript.
 
+Check it out here! https://tlgreg86.github.io/linked-list/
+
 ## Features
 
 - Add bookmarks with title and URL
